@@ -1,0 +1,411 @@
+{
+	"info": {
+		"_postman_id": "ac0241e4-c241-4aea-929d-bbfa94c4fd5c",
+		"name": "invoice",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "auth",
+			"item": [
+				{
+					"name": "reset",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/api/reset",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"reset"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "register",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"firstName\":\"George\",\n\t\"lastName\":\"Vasile\",\n\t\"email\":\"george.vasile@stud.ase.ro\",\n\t\"password\":\"asd\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/api/auth/register",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"auth",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "login",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"email\":\"george.vasile@stud.ase.ro\",\n\t\"password\":\"asd\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/api/auth/login",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "logout",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"email\":\"mihai.vasile@stud.ase.ro\",\n\t\"password\":\"asd\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/api/auth/logout",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"auth",
+								"logout"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "suppliers",
+			"item": [
+				{
+					"name": "add category",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"name\":\"chirie\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/api/suppliers/categories",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"suppliers",
+								"categories"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get categories",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/api/suppliers/categories",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"suppliers",
+								"categories"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get suppliers",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/api/suppliers/",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"suppliers",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "add supplier",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\"name\":\"Semthing\",\n          \"CUI\":\"0000000000\",\n          \"ORC\":\"11111111111\",\n          \"phone\":\"072016568\",\n          \"email\":\"aaaaa@aaa.com\",\n          \"fax\":\"1111-1111\",\n          \"categoryId\":\"1\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/api/suppliers",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"suppliers"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete supplier",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"id\":1\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/api/suppliers",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"suppliers"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "edit supplier",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"id\":\"2\",\n   \"name\":\"Hehehehe\",\n          \"CUI\":\"0000000000\",\n          \"ORC\":\"11111111111\",\n          \"phone\":\"072016568\",\n          \"email\":\"aaaaa@aaa.com\",\n          \"fax\":\"1111-1111\",\n          \"categoryId\":\"1\",\n          \"bankAccount\":[{\n          \t\"operation\":\"ADD\",\n          \t\"iban\":\"1276312f12712612vasdas\"\n          }]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/api/suppliers",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"suppliers"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "invoice",
+			"item": [
+				{
+					"name": "get invoices",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/api/invoices",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"invoices"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "add invoice",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"supplierId\": 2,\n    \"issueDate\": \"23/01/2020\",\n    \"value\": 15,\n    \"currency\": \"EUR\",\n    \"dueDate\": \"23/01/2020\",\n    \"number\": \"2222222\",\n    \"numberDocument\": \"22222\",\n    \"items\": [\n        {\n            \"noUnits\": 2,\n            \"value\":10,\n            \"name\":\"Asss\"\n        },\n        {\n            \"noUnits\": 4,\n            \"value\":10,\n            \"name\":\"Bsss\"\n        },{\n        \t  \"noUnits\": 4,\n            \"value\":10,\n            \"name\":\"Cccc\"\n        }\n    ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/api/invoices",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"invoices"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "execute payment",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"number\": \"123123\",\n    \"type\": \"bill\",\n    \"value\": 23,\n    \"invoiceId\": 5,\n    \"bankAccountId\": 2\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/api/invoices/payment",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"invoices",
+								"payment"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete envoice",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"id\":3\n}"
+						},
+						"url": {
+							"raw": "{{url}}/api/invoices",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"invoices"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get invoices from all users",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/api/invoices/all",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"invoices",
+								"all"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

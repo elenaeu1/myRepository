@@ -1,0 +1,20 @@
+{
+  "dev": {
+    "db": {
+      "database": "invoice",
+      "userName": "root",
+      "password": "",
+      "dialect": "mysql",
+      "host": "localhost"
+    }
+  },
+  "prod": {
+    "db": {
+      "database": "dac55rifk83cnv",
+      "userName": "lrdjzqsvkioiby",
+      "password": "280e77bf28d3d6b4ff6900982c47d48c9de43a9d7da23f8d08ffbeacfce352b6",
+      "dialect": "postgres",
+      "host": "ec2-54-247-79-178.eu-west-1.compute.amazonaws.com"
+    }
+  }
+}
